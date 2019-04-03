@@ -1,0 +1,18 @@
+CREATE TABLE Room
+(
+  Room-Id INT NOT NULL,
+  Room-Type VARCHAR(10) NOT NULL,
+  PRIMARY KEY (Room-Id)
+);
+
+CREATE TABLE Customer
+(
+  Check-In DATE NOT NULL,
+  Check-Out DATE NOT NULL,
+  Number_Of_Adults INT NOT NULL,
+  Number_Of_Children INT NOT NULL,
+  Customer-Id INT NOT NULL,
+  Room-Id INT NOT NULL,
+  PRIMARY KEY (Customer-Id),
+  FOREIGN KEY (Room-Id) REFERENCES Room(Room-Id)
+);
